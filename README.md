@@ -59,7 +59,7 @@ sudo chown 845:845 /opt/factorio
 ```
 run factorio in daemon (background) mode and port forward
 ```sh
-sudo docker run -d \
+docker run -d \
   -p 34197:34197/udp \
   -p 27015:27015/tcp \
   -v /opt/factorio:/factorio \
@@ -67,3 +67,39 @@ sudo docker run -d \
   --restart=always \
   factoriotools/factorio
 ```
+Did you make a mistake? perhaps to start again you want to 
+```sh
+#echo DANGER. WILL DESTROY ALL DOCKER DATA
+#docker rm $(docker ps -a -q) -f
+```
+Check the logs. We should see some errors, cause we have an invalid starting config
+```sh
+docker logs factorio
+```
+Stop factorio
+```sh
+docker stop factorio
+```
+
+Lets edit the config file
+```sh
+sudo nano /opt/factorio/config/server-settings.json
+```
+In the above edit, I changed the following
+1.  ```json
+"visibility":
+  {
+    "public": false,
+    "lan": true
+  },```
+2. ```json
+"require_user_verification": false,
+```
+3. ```json
+"only_admins_can_pause_the_game": false,
+```
+4. ```json
+ "autosave_only_on_server": false,
+ ```
+
+
