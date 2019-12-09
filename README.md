@@ -49,3 +49,21 @@ as a user with docker group permissions (from above)
 ```sh
 docker pull factoriotools/factorio
 ```
+The shared location for user executiable files (opt)
+```sh
+sudo mkdir -p /opt/factorio
+```
+set folder permissions
+```sh 
+sudo chown 845:845 /opt/factorio
+```
+run factorio in daemon (background) mode and port forward
+```sh
+sudo docker run -d \
+  -p 34197:34197/udp \
+  -p 27015:27015/tcp \
+  -v /opt/factorio:/factorio \
+  --name factorio \
+  --restart=always \
+  factoriotools/factorio
+```
