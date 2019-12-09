@@ -86,20 +86,25 @@ Lets edit the config file
 sudo nano /opt/factorio/config/server-settings.json
 ```
 In the above edit, I changed the following
-1.  ```json
+1.  
+```json
 "visibility":
   {
     "public": false,
     "lan": true
-  },```
-2. ```json
+  },
+```
+2. 
+```json
 "require_user_verification": false,
 ```
-3. ```json
+3. 
+```json
 "only_admins_can_pause_the_game": false,
 ```
-4. ```json
+4. 
+```json
  "autosave_only_on_server": false,
- ```
+```
 
 
