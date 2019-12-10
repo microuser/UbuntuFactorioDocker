@@ -57,6 +57,21 @@ set folder permissions
 ```sh 
 sudo chown 845:845 /opt/factorio
 ```
+
+in order to troubleshoot, lets start docker in an interactive console first
+```sh
+docker run -it \
+  -p 34197:34197/udp \
+  -p 27015:27015/tcp \
+  -v /opt/factorio:/factorio \
+  --name factorio \
+  --restart=always \
+  factoriotools/factorio
+```
+
+if it drops you from the console, perhaps you want to ```docker attach factorio```
+
+
 run factorio in daemon (background) mode and port forward
 ```sh
 docker run -d \
