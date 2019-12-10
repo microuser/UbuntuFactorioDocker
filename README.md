@@ -223,3 +223,15 @@ Server Settings which work with public server
 }
 
 ```
+
+
+## More Troubleshooting
+Sometimes there are issues with the firewall
+
+```
+sudo ufw allow 34197/udp
+sudo ufw status verbose
+sudo ufw allow ssh/tcp
+sudo ufw enable
+sudo ufw status
+
