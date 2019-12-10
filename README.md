@@ -266,5 +266,10 @@ sudo nano /etc/dhcp/dhclient.conf
 ```
 append the text to use google's dns servers
 ```txt
-supersede domain-name-servers 8.8.8.8, 8.8.3.3
+supersede domain-name-servers 8.8.8.8, 8.8.4.4
+
+interface "eth0" {
+        prepend domain-name-servers 8.8.8.8
+}
+
 ```
