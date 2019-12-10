@@ -107,4 +107,30 @@ In the above edit, I changed the following
  "autosave_only_on_server": false,
 ```
 
+Since I used nano as the text editor, I press Ctrl-X to save and exit
+
+##
+Run Factorio
+Clear Logs
+```sh
+sudo sh -c "truncate -s 0 /var/lib/docker/containers/*/*-json.log"
+docker logs factorio
+```
+restart and inspect logs
+```sh
+docker stop factorio
+docker start factorio
+docker logs factorio
+```
+
+Interactive Commands
+```sh
+docker run -d -it  \
+      --name factorio \
+      factoriotools/factorio
+docker attach factorio
+
+```
+
+
 
