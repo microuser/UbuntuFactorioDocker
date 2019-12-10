@@ -250,5 +250,12 @@ append the following to the end
 net.ipv6.conf.all.disable_ipv6 = 1
 net.ipv6.conf.default.disable_ipv6 = 1
 net.ipv6.conf.lo.disable_ipv6 =1
-
+```
+restart kernel
+```sh
+sudo sysctl -p
+```
+verify 
+```sh
+cat /proc/sys/net/ipv6/conf/all/disable_ipv6 
 ```
