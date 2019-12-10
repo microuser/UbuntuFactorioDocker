@@ -238,4 +238,17 @@ sudo ufw status verbose
 sudo ufw allow ssh/tcp
 sudo ufw enable
 sudo ufw status
+```
 
+### Disable IPV6
+open editor
+```sh
+sudo nano /etc/sysctl.conf
+```
+append the following to the end
+```txt
+net.ipv6.conf.all.disable_ipv6 = 1
+net.ipv6.conf.default.disable_ipv6 = 1
+net.ipv6.conf.lo.disable_ipv6 =1
+
+```
