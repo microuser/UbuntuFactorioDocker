@@ -259,3 +259,12 @@ verify
 ```sh
 cat /proc/sys/net/ipv6/conf/all/disable_ipv6 
 ```
+
+### Override the DNS 
+```sh
+sudo nano /etc/dhcp/dhclient.conf
+```
+append the text to use google's dns servers
+```txt
+supersede domain-name-servers 8.8.8.8, 8.8.3.3
+```
