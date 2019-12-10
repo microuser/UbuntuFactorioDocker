@@ -65,8 +65,12 @@ docker run -it \
   -p 27015:27015/tcp \
   -v /opt/factorio:/factorio \
   --name factorio \
-  --restart=always \
   factoriotools/factorio
+```
+
+or if you want to inspect the files at a console itself
+```sh
+docker exec -it factorio sh
 ```
 
 if it drops you from the console, perhaps you want to ```docker attach factorio```
