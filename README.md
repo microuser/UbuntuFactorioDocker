@@ -273,3 +273,7 @@ interface "eth0" {
 }
 
 ```
+
+
+# Traial directly on Centos
+sudo yum install -y glibc
